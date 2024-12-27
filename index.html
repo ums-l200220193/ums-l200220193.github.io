@@ -1,0 +1,46 @@
+from metaflow import FlowSpec, step
+
+class InformatikaKuliahFlow(FlowSpec):
+    @step
+    def start(self):
+        """Memulai proses kuliah"""
+        print("Proses dimulai: Bayar SPP")
+        self.next(self.daftar_kuliah)
+    
+    @step
+    def daftar_kuliah(self):
+        """Mendaftarkan mata kuliah"""
+        print("Langkah berikutnya: Daftar mata kuliah yang akan diikuti")
+        self.next(self.hadiri_perkuliahan)
+    
+    @step
+    def hadiri_perkuliahan(self):
+        """Menghadiri perkuliahan"""
+        print("Menghadiri perkuliahan secara rutin dan aktif")
+        self.next(self.kerjakan_tugas)
+    
+    @step
+    def kerjakan_tugas(self):
+        """Mengerjakan tugas dan proyek"""
+        print("Mengerjakan tugas dan proyek mata kuliah")
+        self.next(self.ikuti_ujian)
+    
+    @step
+    def ikuti_ujian(self):
+        """Mengikuti ujian"""
+        print("Mengikuti ujian tengah semester dan akhir semester")
+        self.next(self.dapatkan_nilai)
+    
+    @step
+    def dapatkan_nilai(self):
+        """Mendapatkan nilai akhir mata kuliah"""
+        print("Proses selesai: Mendapatkan nilai akhir mata kuliah")
+        self.next(self.end)
+    
+    @step
+    def end(self):
+        """Akhir dari proses"""
+        print("Proses kuliah telah selesai")
+
+if __name__ == '__main__':
+    InformatikaKuliahFlow()

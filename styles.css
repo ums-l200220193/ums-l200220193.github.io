@@ -1,0 +1,86 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card h3 {
+    color: #5c5c8a;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card pre {
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Analysis Card */
+.analysis-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.analysis-card h3 {
+    color: #5c5c8a;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1.3em;
+    }
+
+    body {
+        margin: 20px;
+    }
+}

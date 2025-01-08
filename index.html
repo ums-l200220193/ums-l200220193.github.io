@@ -1,46 +1,77 @@
-from metaflow import FlowSpec, step
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Laporan UAS</title>
 
-class InformatikaKuliahFlow(FlowSpec):
-    @step
-    def start(self):
-        """Memulai proses kuliah"""
-        print("Proses dimulai: Bayar SPP")
-        self.next(self.daftar_kuliah)
+</head>
+<body>
+    <h1>Laporan UAS IPSD</h1>
     
-    @step
-    def daftar_kuliah(self):
-        """Mendaftarkan mata kuliah"""
-        print("Langkah berikutnya: Daftar mata kuliah yang akan diikuti")
-        self.next(self.hadiri_perkuliahan)
-    
-    @step
-    def hadiri_perkuliahan(self):
-        """Menghadiri perkuliahan"""
-        print("Menghadiri perkuliahan secara rutin dan aktif")
-        self.next(self.kerjakan_tugas)
-    
-    @step
-    def kerjakan_tugas(self):
-        """Mengerjakan tugas dan proyek"""
-        print("Mengerjakan tugas dan proyek mata kuliah")
-        self.next(self.ikuti_ujian)
-    
-    @step
-    def ikuti_ujian(self):
-        """Mengikuti ujian"""
-        print("Mengikuti ujian tengah semester dan akhir semester")
-        self.next(self.dapatkan_nilai)
-    
-    @step
-    def dapatkan_nilai(self):
-        """Mendapatkan nilai akhir mata kuliah"""
-        print("Proses selesai: Mendapatkan nilai akhir mata kuliah")
-        self.next(self.end)
-    
-    @step
-    def end(self):
-        """Akhir dari proses"""
-        print("Proses kuliah telah selesai")
+    <h2>Analisis Conten Grup WhatsApp</h2>
 
-if __name__ == '__main__':
-    InformatikaKuliahFlow()
+
+    <div class="card">
+        <h3>1. Pengumpulan Data</h3>
+        <p>Export konten beberapa group WhatsApp Anda menjadi sebuah file teks. Pilih group WhatsApp yang memiliki komentar paling banyak, dan Anda bisa menggabungkan data dari beberapa group menjadi satu file (misalnya: <code>data_group.txt</code>).</p>
+    </div>
+
+    <div class="card">
+        <h3>2. Pemrosesan Data</h3>
+        <p>Buka file teks hasil ekspor menggunakan aplikasi Excel dan ekspor file tersebut menjadi file CSV (misalnya: <code>data_group.csv</code>). Kemudian, kompres file CSV tersebut menjadi format TAR dengan klik kanan dan pilih "Compress to..." sehingga file menjadi <code>data_group.tar</code>.</p>
+    </div>
+
+    <div class="card">
+        <h3>3. Pembersihan Data (Opsional)</h3>
+        <p>Lakukan pembersihan data dengan hanya mengambil angka, huruf, dan tanda baca umum. Langkah ini bersifat opsional namun sangat disarankan untuk meningkatkan kualitas analisis Anda. Hapus karakter-karakter yang tidak relevan atau dapat mengganggu analisis selanjutnya. Jelaskan apa yang Anda lakukan di sini untuk meningkatkan pemahaman terhadap data yang bersih.</p>
+    </div>
+
+    <div class="card">
+        <h3>4. Pengolahan Data</h3>
+        <p>Dengan data yang telah diproses di atas, gunakan kode program <code>scale_data.py</code> dan <code>many_kmeans_flow.py</code> yang terdapat pada Bab 5 untuk melakukan data clustering menggunakan Metaflow. Lakukan sedikit modifikasi agar program sesuai dengan data yang digunakan.</p>
+    </div>
+
+    <div class="card">
+        <h3>5. Pemilihan Algoritma Clustering</h3>
+        <p>Pilih algoritma clustering yang sesuai. Anda dapat menggunakan algoritma selain K-Means, seperti yang tersedia pada <a href="https://scikit-learn.org/1.5/modules/clustering.html" target="_blank">dokumentasi scikit-learn clustering</a>. Lakukan analisis untuk membuat data menjadi 3, 4, dan 5 cluster.</p>
+    </div>
+        <div class="card">
+            <h3>6. Hasil Clustering</h3>
+            <p>Berikut adalah hasil clustering :</p>
+            <h4>3 Cluster</h4>
+            <pre>Cluster 0: htt
+Cluster 1: det
+Cluster 2: www</pre>
+            <h4>4 Cluster</h4>
+            <pre>Cluster 0: rahm
+Cluster 1: 1212
+Cluster 2: 21
+Cluster 3: 0612</pre>
+            <h4>5 Cluster</h4>
+            <pre>Cluster 0: 21112
+Cluster 1: 10
+Cluster 2: 20
+Cluster 3: luthf
+Cluster 4: topik</pre>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <h3>Distribusi Data</h3>
+            <p><strong>3 Cluster:</strong> {0: 35, 1: 27, 2: 9}</p>
+            <p><strong>4 Cluster:</strong> {0: 25, 1: 21, 2: 8, 3: 25}</p>
+            <p><strong>5 Cluster:</strong> {0: 19, 1: 16, 2: 5, 3: 23, 4: 14}</p>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <h3>Analisis</h3>
+        <p>Hasil clustering menunjukkan bahwa pada tiga kluster, istilah yang dominan adalah "htt", "det", dan "www", yang dapat menunjukkan kategori yang sangat umum atau tidak terstruktur dengan jelas. Pada empat kluster, terdapat lebih banyak variasi dengan istilah seperti "rahm", "1212", dan "0612" yang mungkin menunjukkan pola numerik atau kode. Pada lima kluster, kata-kata seperti "21112", "luthf", dan "topik" menunjukkan kelompok yang lebih terorganisir dengan tema yang lebih spesifik.</p>
+        
+        <h3>Kesimpulan</h3>
+        <p>Kesimpulan dari hasil clustering ini adalah bahwa penggunaan lebih banyak kluster, seperti lima kluster, memberikan hasil yang lebih terperinci dan jelas. Dengan lima kluster, kelompok-kelompok yang terbentuk lebih relevan dan terstruktur. Sebaliknya, tiga kluster menghasilkan hasil yang lebih kabur dan kurang terorganisir. Hasil ini menunjukkan bahwa pengaturan jumlah kluster yang tepat sangat penting untuk memperoleh hasil yang lebih bermakna dalam analisis data.</p>
+    </div>
+</body>
+</html>
